@@ -1,0 +1,296 @@
+:root {
+
+    --ff-primary: 'Raleway', sans-serif;
+
+    --fw-neutral: 400;
+    --fw-bold: 700;
+
+    --fs-primary: 0.875rem;
+
+    --clr-primary-gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --clr-primary-gradient-left: hsl(6, 100%, 80%);
+    --clr-primary-gradient-right: hsl(335, 100%, 65%);
+
+    --clr-neutral-pblue: hsl(243, 100%, 93%);
+    --clr-neutral-gblue: hsl(229, 7%, 55%);
+    --clr-neutral-dblue: hsl(228, 56%, 26%);
+    --clr-neutral-vdblue: hsl(229, 57%, 11%);
+
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+/* set up the body */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-primary);
+    font-weight: var(--fw-neutral);
+    background: url(images/bg-desktop.png) no-repeat bottom center;
+    background-size: contain;
+    background-color: var(--clr-neutral-vdblue);
+}
+
+/* make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+.main {
+    display: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-bottom: 1em;
+}
+
+.main__grid--container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-column-gap: 2.5em;
+    grid-template-areas: 
+    'fylo bar';
+    margin-bottom: 3em;
+}
+
+.grid__container--left {
+    background-color: var(--clr-neutral-dblue);
+    border-radius: 1em 8em 1em 1em;
+    padding: 3em 3em 1.5em 3em;
+    min-width: 380px;
+    grid-area: fylo;
+}
+
+.grid__container--left ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.grid__container--left ul li {
+    display: flex;
+    padding-right: 1.2em;
+    padding-top: 1em;
+    cursor: pointer;
+}
+
+.grid__container--left ul li > img {
+    border: 15px solid var(--clr-neutral-vdblue);
+    border-radius: 1em;
+    background-color: var(--clr-neutral-vdblue);
+}
+
+.grid__container--right {
+    position: relative;
+    background-color: var(--clr-neutral-dblue);   
+    border-radius: 1em;
+    padding: 3em;
+    color: var(--clr-neutral-pblue);
+    max-height: 150px;
+    margin-top: 3.5em;
+    grid-area: bar;
+}
+
+.container__right--infobox {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-neutral-pblue);
+    padding: .5em 1.8em;
+    border-radius: .5em .5em 0 .5em;
+    max-width: 80%;
+    top: -30%;
+    left: 60%;
+}
+
+.container__right--infobox::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -23px;
+    bottom: -5px;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 45px solid var(--clr-neutral-pblue); 
+    transform: rotate(-90deg);
+}
+
+.container__right--infobox h2 {
+    font-size: 2.5rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-vdblue);
+}
+
+.container__right--infobox p {
+    padding-left: 1em;
+    text-transform: uppercase;
+    color: var(--clr-neutral-gblue);
+    font-size: .8rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: 1px;
+}
+
+.container__right--loadbar {
+    border: 3px solid var(--clr-neutral-vdblue);
+    border-radius: 3em;
+    min-width: max-content;
+    background-color: var(--clr-neutral-vdblue);
+}
+
+.container__right--loadbar-inner {
+    background: linear-gradient(to right, var(--clr-primary-gradient-left), var(--clr-primary-gradient-right));
+    border-radius: 3em;
+    max-width: 75%;
+    min-height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container__right-loadbar-inner-dot {
+    background-color: white;
+    border-radius: 50%;
+    min-height: 9px;
+    max-width: 10px;
+    margin-left: 96.5%;
+}
+
+.container__right--content p {
+    padding-bottom: 1em;
+}
+
+.container__right--content ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-top: .5em;
+}
+
+.container__right--content ul li {
+    font-weight: var(--fw-bold);
+    font-size: .8rem;
+}
+
+@media screen and (max-width: 1000px) {
+
+    body {
+        background: url(images/bg-mobile.png) no-repeat center;
+        background-size: contain;
+        background-color: var(--clr-neutral-vdblue);
+    }
+
+    .main__grid--container {
+        display: grid;
+        grid-template-areas: 
+        'fylo fylo'
+        'bar bar';
+        grid-row-gap: 0;
+    }
+
+    .container__right--infobox {
+        max-width: 45%;
+        padding-right: 1.1em;
+        top: 80%;
+        left: 25%;
+        border-radius: -7em;
+    }
+
+    .container__right--infobox::after {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    
+    .grid__container--left {
+        min-width: 0;
+    }
+
+    .container__right--infobox {
+        border-radius: .5em;
+        left: 26%;
+        top: 80%;
+    }
+
+    .container__right--infobox h2 {
+        font-size: 1.5rem;
+    }
+
+    .container__right--infobox p {
+        font-size: 0.5rem;
+    }
+
+    .container__right-loadbar-inner-dot {
+        margin-left: 92%;
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+
+    .main__grid--container {
+        max-width: 75%;
+    }
+
+    .container__right--infobox {
+        display: none;
+    }
+
+    .container__right-loadbar-inner-dot {
+        margin-left: 90%;
+    }
+
+    .grid__container--left {
+        padding-left: 1.5em;
+    }
+
+    .grid__container--left ul li {
+        padding-right: 1em;
+    }
+
+    .grid__container--left ul li > img {
+        max-width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 300px) {
+
+    .main__grid--container {
+        overflow: hidden;
+    }
+
+    .grid__container--left ul li > img {
+        max-width: 45px;
+    }
+
+}
+
+.attribution { font-size: 11px; text-align: center; color: white;}
+.attribution a { color: hsl(227, 33%, 81%); }
