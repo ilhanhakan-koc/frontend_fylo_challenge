@@ -72,7 +72,6 @@ picture {
     grid-column-gap: 2.5em;
     grid-template-areas: 
     'fylo bar';
-    margin-bottom: 3em;
 }
 
 .grid__container--left {
