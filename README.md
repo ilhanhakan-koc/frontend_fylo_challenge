@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
-- Live Site URL: [Live Demo](https://your-live-site-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/responsive-fylo-data-storage-component-Fa7sLyUjHm)
+- Live Site URL: [Live Demo](https://ilhanhakan-koc.github.io/frontend_fylo_challenge/)
 
 ## My process
 
